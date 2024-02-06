@@ -10,6 +10,8 @@ class Pokemon
 
     }
     boolean fight(int dmg){
+
+
         this.hp = this.hp - dmg;
         if ( this.hp<=dmg)
         {
