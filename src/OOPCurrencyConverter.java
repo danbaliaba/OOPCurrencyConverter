@@ -34,6 +34,7 @@ public class OOPCurrencyConverter {
             rate = (h3.currency + "-" + h4.currency);
             switch (h3.currency + "-" + h4.currency) {
                 case "EURO-EURO":
+
                     k = amn.amount;
                     System.out.println(" Ваш результат : " + k);
                     break;
@@ -42,6 +43,7 @@ public class OOPCurrencyConverter {
                     System.out.println(" Ваш результат : " + k);
                     break;
                 case "EURO-TL":
+
                     k = amn.amount * getRateValue(i);
                     System.out.println(" Ваш результат : " + k);
                     break;
