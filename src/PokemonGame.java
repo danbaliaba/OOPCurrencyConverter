@@ -1,5 +1,6 @@
 class Pokemon
 {
+    private final static double additionalHP = 0;
     String name, typ;
     double hp, atk = 3, def = 2, specAtk, specDef, spd;
     Pokemon(String name, String typ, int hp, int spd){
@@ -30,16 +31,26 @@ class Pokemon
         System.out.println("You have " + this.hp + " HP");
         return true;
     }
+    void heal (double additionalHP)
+    {
+
+        this.hp = this.hp + additionalHP;
+
+    }
 }
 
 public class PokemonGame {
     public static void main(String[] args) {
         Pokemon p1 = new Pokemon("Pokemon1", "Typ Tank", 15, 5);
-        Pokemon p2 = new Pokemon("Pokemon2", "Typ Solder", 10, 10);
+        Pokemon p2 = new Pokemon("Pokemon2", "Typ Soldier", 10, 10);
         p1.fight(2);
         p1.sleep(1);
         p2.fight(11);
         p2.sleep(5);
+        p1.heal(4);
+        System.out.println(p1.hp);
+        p2.heal(3);
+        System.out.println(p2.hp);
 
     }
 }
