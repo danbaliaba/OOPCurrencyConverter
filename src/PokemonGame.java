@@ -1,6 +1,15 @@
+import java.util.Scanner;
+
 class Pokemon
 {
-    private final static double additionalHP = 0;
+    private static double additionalHP = 0;
+    static
+    {
+        Scanner addHp = new Scanner(System.in);
+        System.out.print("AddHp Pokemon1 : ");
+
+        additionalHP = addHp.nextDouble();
+    }
     String name, typ;
     double hp, atk = 3, def = 2, specAtk, specDef, spd;
     Pokemon(String name, String typ, int hp, int spd){
@@ -31,14 +40,13 @@ class Pokemon
         System.out.println("You have " + this.hp + " HP");
         return true;
     }
-    void heal (double additionalHP)
+    void heal ()
     {
 
         this.hp = this.hp + additionalHP;
 
     }
 }
-
 public class PokemonGame {
     public static void main(String[] args) {
         Pokemon p1 = new Pokemon("Pokemon1", "Typ Tank", 15, 5);
@@ -47,9 +55,8 @@ public class PokemonGame {
         p1.sleep(1);
         p2.fight(11);
         p2.sleep(5);
-        p1.heal(4);
+        p1.heal();
         System.out.println(p1.hp);
-        p2.heal(3);
         System.out.println(p2.hp);
 
     }
